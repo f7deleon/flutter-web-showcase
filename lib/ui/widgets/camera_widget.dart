@@ -27,47 +27,47 @@ class CameraWidget extends StatefulWidget {
 class _CameraWidgetState extends State<CameraWidget> {
   final double _width;
   final double _height;
-  late VideoElement _webcamVideoElement;
+  VideoElement _webcamVideoElement = VideoElement()
+    ..style.width = '100%'
+    ..style.height = '100%';
   late Function(Event) eventListener;
-  late Function() valueChanged;
+  Function() valueChanged;
 
   /*
      videoElementId has to be a random number since if they are the same for
      each instance it will always take the first widget instance that is
       destroyed so it will crash
     */
-  final String videoElementId =
-      'webcam${DateTime.now().millisecondsSinceEpoch}';
+  final String videoElementId = 'webcam';
   MediaStream? _stream;
 
   _CameraWidgetState(this._width, this._height, this.valueChanged) : super();
 
   @override
   void dispose() {
-    _webcamVideoElement.pause();
-    _webcamVideoElement.srcObject = null;
-    _webcamVideoElement.removeAttribute('src');
-    _webcamVideoElement.remove();
-    _stream?.getTracks().forEach((element) {
-      element.stop();
-    });
-    _stream = null;
+    // _webcamVideoElement.pause();
+    // _webcamVideoElement.srcObject = null;
+    // _webcamVideoElement.removeAttribute('src');
+    // _webcamVideoElement.remove();
+    // _stream?.getTracks().forEach((element) {
+    //   element.stop();
+    // });
+    // _stream = null;
+    print('dispose');
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    _webcamVideoElement = VideoElement()
-      ..style.width = '100%'
-      ..style.height = '100%';
 
     // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(videoElementId, (int viewId) {
+    ui.platformViewRegistry.registerViewFactory('webcam', (int viewId) {
       setupCamera();
 
       eventListener = (event) {
-        _webcamVideoElement.removeEventListener('loadeddata', eventListener);
+        renderPrediction(0);
+        //_webcamVideoElement.removeEventListener('loadeddata', eventListener);
       };
       _webcamVideoElement.addEventListener('loadeddata', eventListener);
       return _webcamVideoElement;
@@ -94,8 +94,6 @@ class _CameraWidgetState extends State<CameraWidget> {
       ..setAttribute('width', _width)
       ..setAttribute('height', _height)
       ..style.setProperty('transform', 'scaleX(-1)');
-
-    renderPrediction(0);
   }
 
   void renderPrediction(num test) async {
@@ -112,7 +110,7 @@ class _CameraWidgetState extends State<CameraWidget> {
         width: _width,
         child: HtmlElementView(
           key: UniqueKey(),
-          viewType: videoElementId,
+          viewType: 'webcam',
         ),
       ),
     );
