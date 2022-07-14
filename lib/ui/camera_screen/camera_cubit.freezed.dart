@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'welcome_cubit.dart';
+part of 'camera_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,164 +15,163 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$WelcomeBaseState {
-  String? get name => throw _privateConstructorUsedError;
+mixin _$CameraState {
+  int get number => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? name) state,
+    required TResult Function(int number) state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? name)? state,
+    TResult Function(int number)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? name)? state,
+    TResult Function(int number)? state,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeState value) state,
+    required TResult Function(CameraStateBase value) state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(WelcomeState value)? state,
+    TResult Function(CameraStateBase value)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeState value)? state,
+    TResult Function(CameraStateBase value)? state,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $WelcomeBaseStateCopyWith<WelcomeBaseState> get copyWith =>
+  $CameraStateCopyWith<CameraState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $WelcomeBaseStateCopyWith<$Res> {
-  factory $WelcomeBaseStateCopyWith(
-          WelcomeBaseState value, $Res Function(WelcomeBaseState) then) =
-      _$WelcomeBaseStateCopyWithImpl<$Res>;
-  $Res call({String? name});
+abstract class $CameraStateCopyWith<$Res> {
+  factory $CameraStateCopyWith(
+          CameraState value, $Res Function(CameraState) then) =
+      _$CameraStateCopyWithImpl<$Res>;
+  $Res call({int number});
 }
 
 /// @nodoc
-class _$WelcomeBaseStateCopyWithImpl<$Res>
-    implements $WelcomeBaseStateCopyWith<$Res> {
-  _$WelcomeBaseStateCopyWithImpl(this._value, this._then);
+class _$CameraStateCopyWithImpl<$Res> implements $CameraStateCopyWith<$Res> {
+  _$CameraStateCopyWithImpl(this._value, this._then);
 
-  final WelcomeBaseState _value;
+  final CameraState _value;
   // ignore: unused_field
-  final $Res Function(WelcomeBaseState) _then;
+  final $Res Function(CameraState) _then;
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? number = freezed,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
-abstract class $WelcomeStateCopyWith<$Res>
-    implements $WelcomeBaseStateCopyWith<$Res> {
-  factory $WelcomeStateCopyWith(
-          WelcomeState value, $Res Function(WelcomeState) then) =
-      _$WelcomeStateCopyWithImpl<$Res>;
+abstract class $CameraStateBaseCopyWith<$Res>
+    implements $CameraStateCopyWith<$Res> {
+  factory $CameraStateBaseCopyWith(
+          CameraStateBase value, $Res Function(CameraStateBase) then) =
+      _$CameraStateBaseCopyWithImpl<$Res>;
   @override
-  $Res call({String? name});
+  $Res call({int number});
 }
 
 /// @nodoc
-class _$WelcomeStateCopyWithImpl<$Res>
-    extends _$WelcomeBaseStateCopyWithImpl<$Res>
-    implements $WelcomeStateCopyWith<$Res> {
-  _$WelcomeStateCopyWithImpl(
-      WelcomeState _value, $Res Function(WelcomeState) _then)
-      : super(_value, (v) => _then(v as WelcomeState));
+class _$CameraStateBaseCopyWithImpl<$Res>
+    extends _$CameraStateCopyWithImpl<$Res>
+    implements $CameraStateBaseCopyWith<$Res> {
+  _$CameraStateBaseCopyWithImpl(
+      CameraStateBase _value, $Res Function(CameraStateBase) _then)
+      : super(_value, (v) => _then(v as CameraStateBase));
 
   @override
-  WelcomeState get _value => super._value as WelcomeState;
+  CameraStateBase get _value => super._value as CameraStateBase;
 
   @override
   $Res call({
-    Object? name = freezed,
+    Object? number = freezed,
   }) {
-    return _then(WelcomeState(
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+    return _then(CameraStateBase(
+      number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
 
-class _$WelcomeState implements WelcomeState {
-  const _$WelcomeState({required this.name});
+class _$CameraStateBase implements CameraStateBase {
+  const _$CameraStateBase(this.number);
 
   @override
-  final String? name;
+  final int number;
 
   @override
   String toString() {
-    return 'WelcomeBaseState.state(name: $name)';
+    return 'CameraState.state(number: $number)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is WelcomeState &&
-            const DeepCollectionEquality().equals(other.name, name));
+            other is CameraStateBase &&
+            const DeepCollectionEquality().equals(other.number, number));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(name));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(number));
 
   @JsonKey(ignore: true)
   @override
-  $WelcomeStateCopyWith<WelcomeState> get copyWith =>
-      _$WelcomeStateCopyWithImpl<WelcomeState>(this, _$identity);
+  $CameraStateBaseCopyWith<CameraStateBase> get copyWith =>
+      _$CameraStateBaseCopyWithImpl<CameraStateBase>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? name) state,
+    required TResult Function(int number) state,
   }) {
-    return state(name);
+    return state(number);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? name)? state,
+    TResult Function(int number)? state,
   }) {
-    return state?.call(name);
+    return state?.call(number);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? name)? state,
+    TResult Function(int number)? state,
     required TResult orElse(),
   }) {
     if (state != null) {
-      return state(name);
+      return state(number);
     }
     return orElse();
   }
@@ -180,7 +179,7 @@ class _$WelcomeState implements WelcomeState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(WelcomeState value) state,
+    required TResult Function(CameraStateBase value) state,
   }) {
     return state(this);
   }
@@ -188,7 +187,7 @@ class _$WelcomeState implements WelcomeState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(WelcomeState value)? state,
+    TResult Function(CameraStateBase value)? state,
   }) {
     return state?.call(this);
   }
@@ -196,7 +195,7 @@ class _$WelcomeState implements WelcomeState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(WelcomeState value)? state,
+    TResult Function(CameraStateBase value)? state,
     required TResult orElse(),
   }) {
     if (state != null) {
@@ -206,13 +205,13 @@ class _$WelcomeState implements WelcomeState {
   }
 }
 
-abstract class WelcomeState implements WelcomeBaseState {
-  const factory WelcomeState({required final String? name}) = _$WelcomeState;
+abstract class CameraStateBase implements CameraState {
+  const factory CameraStateBase(final int number) = _$CameraStateBase;
 
   @override
-  String? get name => throw _privateConstructorUsedError;
+  int get number => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $WelcomeStateCopyWith<WelcomeState> get copyWith =>
+  $CameraStateBaseCopyWith<CameraStateBase> get copyWith =>
       throw _privateConstructorUsedError;
 }

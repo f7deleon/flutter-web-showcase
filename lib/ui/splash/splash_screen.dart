@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_template/core/di/di_provider.dart';
-import 'package:flutter_template/core/model/authentication_status.dart';
 import 'package:flutter_template/ui/app_router.dart';
 import 'package:flutter_template/ui/splash/splash_bloc.dart';
 
@@ -44,13 +43,10 @@ class _SplashContentScreen extends StatelessWidget {
       });
 
   List<PageRouteInfo<dynamic>> provideRoutes(SplashBaseState state) {
-    switch (state.authenticationStatus) {
-      case AuthenticationStatus.unknown:
-        return [];
-      case AuthenticationStatus.authenticated:
-        return [WelcomeScreenRoute()];
-      case AuthenticationStatus.unauthenticated:
-        return [SignInScreenRoute()];
+    if (state.showNumber) {
+      return [RandomRouter()];
+    } else {
+      return [CameraRouter()];
     }
   }
 }

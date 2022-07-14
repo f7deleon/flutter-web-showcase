@@ -16,38 +16,36 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SplashBaseEvent {
-  AuthenticationStatus get authenticationStatus =>
-      throw _privateConstructorUsedError;
+  bool get showCamera => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationStatus authenticationStatus)
-        changeAuth,
+    required TResult Function(bool showCamera) changeRouter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? changeAuth,
+    TResult Function(bool showCamera)? changeRouter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? changeAuth,
+    TResult Function(bool showCamera)? changeRouter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashEvent value) changeAuth,
+    required TResult Function(SplashEvent value) changeRouter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashEvent value)? changeAuth,
+    TResult Function(SplashEvent value)? changeRouter,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashEvent value)? changeAuth,
+    TResult Function(SplashEvent value)? changeRouter,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,7 +60,7 @@ abstract class $SplashBaseEventCopyWith<$Res> {
   factory $SplashBaseEventCopyWith(
           SplashBaseEvent value, $Res Function(SplashBaseEvent) then) =
       _$SplashBaseEventCopyWithImpl<$Res>;
-  $Res call({AuthenticationStatus authenticationStatus});
+  $Res call({bool showCamera});
 }
 
 /// @nodoc
@@ -76,13 +74,13 @@ class _$SplashBaseEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? authenticationStatus = freezed,
+    Object? showCamera = freezed,
   }) {
     return _then(_value.copyWith(
-      authenticationStatus: authenticationStatus == freezed
-          ? _value.authenticationStatus
-          : authenticationStatus // ignore: cast_nullable_to_non_nullable
-              as AuthenticationStatus,
+      showCamera: showCamera == freezed
+          ? _value.showCamera
+          : showCamera // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -94,7 +92,7 @@ abstract class $SplashEventCopyWith<$Res>
           SplashEvent value, $Res Function(SplashEvent) then) =
       _$SplashEventCopyWithImpl<$Res>;
   @override
-  $Res call({AuthenticationStatus authenticationStatus});
+  $Res call({bool showCamera});
 }
 
 /// @nodoc
@@ -110,13 +108,13 @@ class _$SplashEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? authenticationStatus = freezed,
+    Object? showCamera = freezed,
   }) {
     return _then(SplashEvent(
-      authenticationStatus: authenticationStatus == freezed
-          ? _value.authenticationStatus
-          : authenticationStatus // ignore: cast_nullable_to_non_nullable
-              as AuthenticationStatus,
+      showCamera: showCamera == freezed
+          ? _value.showCamera
+          : showCamera // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -124,14 +122,14 @@ class _$SplashEventCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SplashEvent implements SplashEvent {
-  const _$SplashEvent({required this.authenticationStatus});
+  const _$SplashEvent({required this.showCamera});
 
   @override
-  final AuthenticationStatus authenticationStatus;
+  final bool showCamera;
 
   @override
   String toString() {
-    return 'SplashBaseEvent.changeAuth(authenticationStatus: $authenticationStatus)';
+    return 'SplashBaseEvent.changeRouter(showCamera: $showCamera)';
   }
 
   @override
@@ -140,12 +138,12 @@ class _$SplashEvent implements SplashEvent {
         (other.runtimeType == runtimeType &&
             other is SplashEvent &&
             const DeepCollectionEquality()
-                .equals(other.authenticationStatus, authenticationStatus));
+                .equals(other.showCamera, showCamera));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(authenticationStatus));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(showCamera));
 
   @JsonKey(ignore: true)
   @override
@@ -155,28 +153,27 @@ class _$SplashEvent implements SplashEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationStatus authenticationStatus)
-        changeAuth,
+    required TResult Function(bool showCamera) changeRouter,
   }) {
-    return changeAuth(authenticationStatus);
+    return changeRouter(showCamera);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? changeAuth,
+    TResult Function(bool showCamera)? changeRouter,
   }) {
-    return changeAuth?.call(authenticationStatus);
+    return changeRouter?.call(showCamera);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? changeAuth,
+    TResult Function(bool showCamera)? changeRouter,
     required TResult orElse(),
   }) {
-    if (changeAuth != null) {
-      return changeAuth(authenticationStatus);
+    if (changeRouter != null) {
+      return changeRouter(showCamera);
     }
     return orElse();
   }
@@ -184,40 +181,37 @@ class _$SplashEvent implements SplashEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(SplashEvent value) changeAuth,
+    required TResult Function(SplashEvent value) changeRouter,
   }) {
-    return changeAuth(this);
+    return changeRouter(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(SplashEvent value)? changeAuth,
+    TResult Function(SplashEvent value)? changeRouter,
   }) {
-    return changeAuth?.call(this);
+    return changeRouter?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(SplashEvent value)? changeAuth,
+    TResult Function(SplashEvent value)? changeRouter,
     required TResult orElse(),
   }) {
-    if (changeAuth != null) {
-      return changeAuth(this);
+    if (changeRouter != null) {
+      return changeRouter(this);
     }
     return orElse();
   }
 }
 
 abstract class SplashEvent implements SplashBaseEvent {
-  const factory SplashEvent(
-          {required final AuthenticationStatus authenticationStatus}) =
-      _$SplashEvent;
+  const factory SplashEvent({required final bool showCamera}) = _$SplashEvent;
 
   @override
-  AuthenticationStatus get authenticationStatus =>
-      throw _privateConstructorUsedError;
+  bool get showCamera => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $SplashEventCopyWith<SplashEvent> get copyWith =>
@@ -226,21 +220,20 @@ abstract class SplashEvent implements SplashBaseEvent {
 
 /// @nodoc
 mixin _$SplashBaseState {
-  AuthenticationStatus get authenticationStatus =>
-      throw _privateConstructorUsedError;
+  bool get showNumber => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationStatus authenticationStatus) state,
+    required TResult Function(bool showNumber) state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? state,
+    TResult Function(bool showNumber)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? state,
+    TResult Function(bool showNumber)? state,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -271,7 +264,7 @@ abstract class $SplashBaseStateCopyWith<$Res> {
   factory $SplashBaseStateCopyWith(
           SplashBaseState value, $Res Function(SplashBaseState) then) =
       _$SplashBaseStateCopyWithImpl<$Res>;
-  $Res call({AuthenticationStatus authenticationStatus});
+  $Res call({bool showNumber});
 }
 
 /// @nodoc
@@ -285,13 +278,13 @@ class _$SplashBaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? authenticationStatus = freezed,
+    Object? showNumber = freezed,
   }) {
     return _then(_value.copyWith(
-      authenticationStatus: authenticationStatus == freezed
-          ? _value.authenticationStatus
-          : authenticationStatus // ignore: cast_nullable_to_non_nullable
-              as AuthenticationStatus,
+      showNumber: showNumber == freezed
+          ? _value.showNumber
+          : showNumber // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -303,7 +296,7 @@ abstract class $SplashStateCopyWith<$Res>
           SplashState value, $Res Function(SplashState) then) =
       _$SplashStateCopyWithImpl<$Res>;
   @override
-  $Res call({AuthenticationStatus authenticationStatus});
+  $Res call({bool showNumber});
 }
 
 /// @nodoc
@@ -319,13 +312,13 @@ class _$SplashStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? authenticationStatus = freezed,
+    Object? showNumber = freezed,
   }) {
     return _then(SplashState(
-      authenticationStatus: authenticationStatus == freezed
-          ? _value.authenticationStatus
-          : authenticationStatus // ignore: cast_nullable_to_non_nullable
-              as AuthenticationStatus,
+      showNumber: showNumber == freezed
+          ? _value.showNumber
+          : showNumber // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -333,14 +326,14 @@ class _$SplashStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SplashState implements SplashState {
-  const _$SplashState({required this.authenticationStatus});
+  const _$SplashState({required this.showNumber});
 
   @override
-  final AuthenticationStatus authenticationStatus;
+  final bool showNumber;
 
   @override
   String toString() {
-    return 'SplashBaseState.state(authenticationStatus: $authenticationStatus)';
+    return 'SplashBaseState.state(showNumber: $showNumber)';
   }
 
   @override
@@ -349,12 +342,12 @@ class _$SplashState implements SplashState {
         (other.runtimeType == runtimeType &&
             other is SplashState &&
             const DeepCollectionEquality()
-                .equals(other.authenticationStatus, authenticationStatus));
+                .equals(other.showNumber, showNumber));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(authenticationStatus));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(showNumber));
 
   @JsonKey(ignore: true)
   @override
@@ -364,27 +357,27 @@ class _$SplashState implements SplashState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(AuthenticationStatus authenticationStatus) state,
+    required TResult Function(bool showNumber) state,
   }) {
-    return state(authenticationStatus);
+    return state(showNumber);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? state,
+    TResult Function(bool showNumber)? state,
   }) {
-    return state?.call(authenticationStatus);
+    return state?.call(showNumber);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(AuthenticationStatus authenticationStatus)? state,
+    TResult Function(bool showNumber)? state,
     required TResult orElse(),
   }) {
     if (state != null) {
-      return state(authenticationStatus);
+      return state(showNumber);
     }
     return orElse();
   }
@@ -419,13 +412,10 @@ class _$SplashState implements SplashState {
 }
 
 abstract class SplashState implements SplashBaseState {
-  const factory SplashState(
-          {required final AuthenticationStatus authenticationStatus}) =
-      _$SplashState;
+  const factory SplashState({required final bool showNumber}) = _$SplashState;
 
   @override
-  AuthenticationStatus get authenticationStatus =>
-      throw _privateConstructorUsedError;
+  bool get showNumber => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   $SplashStateCopyWith<SplashState> get copyWith =>
