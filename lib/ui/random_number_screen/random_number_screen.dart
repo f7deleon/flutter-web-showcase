@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_template/ui/splash/splash_bloc.dart';
 import 'package:flutter_template/ui/widgets/camera_widget.dart';
@@ -28,7 +27,7 @@ class _RandomNumberScreenContent extends StatelessWidget {
             key: UniqueKey(),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            valueChanged: (){},
+            valueChanged: () {},
           ),
           Center(
             child: Column(

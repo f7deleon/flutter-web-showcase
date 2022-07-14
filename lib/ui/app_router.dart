@@ -33,7 +33,6 @@ part 'app_router.gr.dart';
     )
   ],
 )
-
 class AppRouter extends _$AppRouter {
   static const SIGN_IN_PATH = 'signin';
   static const CAMERA_PATH = 'camera';

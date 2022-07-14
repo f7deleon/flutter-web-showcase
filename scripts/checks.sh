@@ -12,6 +12,3 @@ fvm flutter analyze . || { echo -e "${RED}Linter error" ; exit 1; }
 
 echo ':: Run tests ::'
 fvm flutter test || { echo -e "${RED}Test error" ; exit 1; }
-
-echo ':: Build flutter android ::'
-fvm flutter build apk --flavor development || { echo -e "${RED}Android building error" ; exit 1; }

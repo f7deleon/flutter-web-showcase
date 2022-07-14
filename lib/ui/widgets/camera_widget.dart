@@ -36,7 +36,8 @@ class _CameraWidgetState extends State<CameraWidget> {
      each instance it will always take the first widget instance that is
       destroyed so it will crash
     */
-  final String videoElementId = 'webcam${DateTime.now().millisecondsSinceEpoch}';
+  final String videoElementId =
+      'webcam${DateTime.now().millisecondsSinceEpoch}';
   MediaStream? _stream;
 
   _CameraWidgetState(this._width, this._height, this.valueChanged) : super();
