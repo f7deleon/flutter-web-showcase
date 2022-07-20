@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_template/core/di/di_provider.dart';
-import 'package:flutter_template/ui/app_router.dart';
-import 'package:flutter_template/ui/splash/splash_bloc.dart';
+import 'package:flutter_web_showcase/core/di/di_provider.dart';
+import 'package:flutter_web_showcase/ui/app_router.dart';
+import 'package:flutter_web_showcase/ui/splash/splash_bloc.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);

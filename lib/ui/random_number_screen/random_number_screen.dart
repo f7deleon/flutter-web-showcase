@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/ui/splash/splash_bloc.dart';
-import 'package:flutter_template/ui/widgets/camera_widget.dart';
+import 'package:flutter_web_showcase/ui/splash/splash_bloc.dart';
+import 'package:flutter_web_showcase/ui/widgets/camera_widget.dart';
 
 import 'random_number_cubit.dart';
 

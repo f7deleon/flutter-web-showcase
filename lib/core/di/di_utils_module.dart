@@ -1,4 +1,4 @@
-import 'package:flutter_template/ui/app_router.dart';
+import 'package:flutter_web_showcase/ui/app_router.dart';
 import 'package:get_it/get_it.dart';
 
 class UtilsDiModule {

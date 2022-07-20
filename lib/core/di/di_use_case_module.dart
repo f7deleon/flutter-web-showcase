@@ -1,7 +1,7 @@
-import 'package:flutter_template/core/use_cases/get_user_info_use_case.dart';
-import 'package:flutter_template/core/use_cases/sign_in_use_case.dart';
-import 'package:flutter_template/core/use_cases/sign_out_use_case.dart';
-import 'package:flutter_template/core/use_cases/track_auth_use_case.dart';
+import 'package:flutter_web_showcase/core/use_cases/get_user_info_use_case.dart';
+import 'package:flutter_web_showcase/core/use_cases/sign_in_use_case.dart';
+import 'package:flutter_web_showcase/core/use_cases/sign_out_use_case.dart';
+import 'package:flutter_web_showcase/core/use_cases/track_auth_use_case.dart';
 import 'package:get_it/get_it.dart';
 
 class UseCaseDiModule {

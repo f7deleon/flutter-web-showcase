@@ -1,5 +1,6 @@
-import 'package:flutter_template/core/model/user.dart';
-import 'package:flutter_template/core/repository/session_repository.dart';
+
+import 'package:flutter_web_showcase/core/model/user.dart';
+import 'package:flutter_web_showcase/core/repository/session_repository.dart';
 
 import 'base_use_case.dart';
 

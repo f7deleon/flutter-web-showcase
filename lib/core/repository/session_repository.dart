@@ -1,9 +1,10 @@
 import 'dart:async';
 
-import 'package:flutter_template/core/model/authentication_status.dart';
-import 'package:flutter_template/core/model/user.dart';
-import 'package:flutter_template/core/source/auth_local_source.dart';
-import 'package:flutter_template/core/source/auth_remote_source.dart';
+import 'package:flutter_web_showcase/core/model/authentication_status.dart';
+import 'package:flutter_web_showcase/core/model/user.dart';
+import 'package:flutter_web_showcase/core/source/auth_local_source.dart';
+import 'package:flutter_web_showcase/core/source/auth_remote_source.dart';
+
 
 class SessionRepository {
   final AuthLocalSource _authLocalSource;

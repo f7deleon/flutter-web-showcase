@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_template/ui/camera_screen/camera_cubit.dart';
-import 'package:flutter_template/ui/splash/splash_bloc.dart';
-import 'package:flutter_template/ui/widgets/camera_widget.dart';
+import 'package:flutter_web_showcase/ui/camera_screen/camera_cubit.dart';
+import 'package:flutter_web_showcase/ui/splash/splash_bloc.dart';
+import 'package:flutter_web_showcase/ui/widgets/camera_widget.dart';
 
 class CameraScreen extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter_template/core/model/authentication_status.dart';
+import 'package:flutter_web_showcase/core/model/authentication_status.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'splash_bloc.freezed.dart';

@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_template/core/model/user.dart';
+import 'package:flutter_web_showcase/core/model/user.dart';
 
 class AuthLocalSource {
   static const _storageAuthPrefix = 'AuthLocalSource';

@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/common/config.dart';
-import 'package:flutter_template/core/common/logger.dart';
-import 'package:flutter_template/ui/splash/splash_screen.dart';
+import 'package:flutter_web_showcase/core/common/config.dart';
+import 'package:flutter_web_showcase/core/common/logger.dart';
+import 'package:flutter_web_showcase/ui/splash/splash_screen.dart';
 
 Future main() async {
   await runZonedGuarded(() async {

@@ -1,5 +1,6 @@
-import 'package:flutter_template/core/model/service/auth_models.dart';
-import 'package:flutter_template/core/source/common/http_service.dart';
+
+import 'package:flutter_web_showcase/core/model/service/auth_models.dart';
+import 'package:flutter_web_showcase/core/source/common/http_service.dart';
 
 class AuthRemoteSource {
   final HttpServiceDio _httpService;

@@ -45,15 +45,14 @@ class _CameraWidgetState extends State<CameraWidget> {
 
   @override
   void dispose() {
-    // _webcamVideoElement.pause();
-    // _webcamVideoElement.srcObject = null;
-    // _webcamVideoElement.removeAttribute('src');
-    // _webcamVideoElement.remove();
-    // _stream?.getTracks().forEach((element) {
-    //   element.stop();
-    // });
-    // _stream = null;
-    print('dispose');
+    _webcamVideoElement.pause();
+    _webcamVideoElement.srcObject = null;
+    _webcamVideoElement.removeAttribute('src');
+    _webcamVideoElement.remove();
+    _stream?.getTracks().forEach((element) {
+      element.stop();
+    });
+    _stream = null;
     super.dispose();
   }
 
@@ -67,7 +66,7 @@ class _CameraWidgetState extends State<CameraWidget> {
 
       eventListener = (event) {
         renderPrediction(0);
-        //_webcamVideoElement.removeEventListener('loadeddata', eventListener);
+        _webcamVideoElement.removeEventListener('loadeddata', eventListener);
       };
       _webcamVideoElement.addEventListener('loadeddata', eventListener);
       return _webcamVideoElement;

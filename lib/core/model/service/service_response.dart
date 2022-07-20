@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/core/common/network_exceptions.dart';
+import 'package:flutter_web_showcase/core/common/network_exceptions.dart';
 
 class ServiceResponse<T> {
   final int code;

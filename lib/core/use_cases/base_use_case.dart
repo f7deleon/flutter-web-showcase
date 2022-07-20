@@ -1,5 +1,6 @@
-import 'package:flutter_template/core/common/result.dart';
-import 'package:flutter_template/core/common/logger.dart';
+
+import 'package:flutter_web_showcase/core/common/logger.dart';
+import 'package:flutter_web_showcase/core/common/result.dart';
 
 abstract class BaseUseCase {}
 

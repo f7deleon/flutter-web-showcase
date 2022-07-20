@@ -1,8 +1,8 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:flutter_template/core/repository/session_repository.dart';
-import 'package:flutter_template/core/source/auth_local_source.dart';
-import 'package:flutter_template/core/source/auth_remote_source.dart';
-import 'package:flutter_template/core/source/common/http_service.dart';
+import 'package:flutter_web_showcase/core/repository/session_repository.dart';
+import 'package:flutter_web_showcase/core/source/auth_local_source.dart';
+import 'package:flutter_web_showcase/core/source/auth_remote_source.dart';
+import 'package:flutter_web_showcase/core/source/common/http_service.dart';
 import 'package:get_it/get_it.dart';
 
 class RepositoryDiModule {
