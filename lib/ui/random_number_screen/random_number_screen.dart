@@ -1,6 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_web_showcase/ui/splash/splash_bloc.dart';
+import 'package:flutter_web_showcase/ui/app_router.dart';
 import 'package:flutter_web_showcase/ui/widgets/camera_widget.dart';
 
 import 'random_number_cubit.dart';
@@ -35,11 +36,8 @@ class _RandomNumberScreenContent extends StatelessWidget {
                 Text('Here is a random number:'),
                 Text(state.number.toString()),
                 ElevatedButton(
-                    onPressed: () {
-                      context
-                          .read<SplashBloc>()
-                          .add(SplashBaseEvent.changeRouter(showCamera: false));
-                    },
+                    onPressed: () =>
+                        context.router.replace(CameraScreenRoute()),
                     child: Text('Go Back'))
               ],
             ),

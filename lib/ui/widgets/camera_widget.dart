@@ -27,7 +27,7 @@ class CameraWidget extends StatefulWidget {
 class _CameraWidgetState extends State<CameraWidget> {
   final double _width;
   final double _height;
-  VideoElement _webcamVideoElement = VideoElement()
+  final VideoElement _webcamVideoElement = VideoElement()
     ..style.width = '100%'
     ..style.height = '100%';
   late Function(Event) eventListener;

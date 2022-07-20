@@ -17,13 +17,9 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    CameraRouter.name: (routeData) {
+    ExampleSelectorScreenRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
-          routeData: routeData, child: const EmptyRouterPage());
-    },
-    RandomRouter.name: (routeData) {
-      return MaterialPageX<dynamic>(
-          routeData: routeData, child: const EmptyRouterPage());
+          routeData: routeData, child: ExampleSelectorScreen());
     },
     CameraScreenRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
@@ -34,55 +30,39 @@ class _$AppRouter extends RootStackRouter {
           routeData: routeData,
           child: RandomNumberScreen(),
           maintainState: false);
+    },
+    UseDomElementScreenRoute.name: (routeData) {
+      return MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: const UseDomElementScreen(),
+          maintainState: false);
     }
   };
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(CameraRouter.name, path: '/', children: [
-          RouteConfig('#redirect',
-              path: '',
-              parent: CameraRouter.name,
-              redirectTo: 'camera',
-              fullMatch: true),
-          RouteConfig(CameraScreenRoute.name,
-              path: 'camera', parent: CameraRouter.name)
-        ]),
-        RouteConfig(RandomRouter.name, path: '/empty-router-page', children: [
-          RouteConfig('#redirect',
-              path: '',
-              parent: RandomRouter.name,
-              redirectTo: 'random',
-              fullMatch: true),
-          RouteConfig(RandomNumberScreenRoute.name,
-              path: 'random', parent: RandomRouter.name)
-        ])
+        RouteConfig('/#redirect',
+            path: '/', redirectTo: '/examples', fullMatch: true),
+        RouteConfig(ExampleSelectorScreenRoute.name, path: '/examples'),
+        RouteConfig(CameraScreenRoute.name, path: '/camera'),
+        RouteConfig(RandomNumberScreenRoute.name, path: '/random'),
+        RouteConfig(UseDomElementScreenRoute.name, path: '/use_dom_elements')
       ];
 }
 
 /// generated route for
-/// [EmptyRouterPage]
-class CameraRouter extends PageRouteInfo<void> {
-  const CameraRouter({List<PageRouteInfo>? children})
-      : super(CameraRouter.name, path: '/', initialChildren: children);
+/// [ExampleSelectorScreen]
+class ExampleSelectorScreenRoute extends PageRouteInfo<void> {
+  const ExampleSelectorScreenRoute()
+      : super(ExampleSelectorScreenRoute.name, path: '/examples');
 
-  static const String name = 'CameraRouter';
-}
-
-/// generated route for
-/// [EmptyRouterPage]
-class RandomRouter extends PageRouteInfo<void> {
-  const RandomRouter({List<PageRouteInfo>? children})
-      : super(RandomRouter.name,
-            path: '/empty-router-page', initialChildren: children);
-
-  static const String name = 'RandomRouter';
+  static const String name = 'ExampleSelectorScreenRoute';
 }
 
 /// generated route for
 /// [CameraScreen]
 class CameraScreenRoute extends PageRouteInfo<void> {
-  const CameraScreenRoute() : super(CameraScreenRoute.name, path: 'camera');
+  const CameraScreenRoute() : super(CameraScreenRoute.name, path: '/camera');
 
   static const String name = 'CameraScreenRoute';
 }
@@ -91,7 +71,16 @@ class CameraScreenRoute extends PageRouteInfo<void> {
 /// [RandomNumberScreen]
 class RandomNumberScreenRoute extends PageRouteInfo<void> {
   const RandomNumberScreenRoute()
-      : super(RandomNumberScreenRoute.name, path: 'random');
+      : super(RandomNumberScreenRoute.name, path: '/random');
 
   static const String name = 'RandomNumberScreenRoute';
+}
+
+/// generated route for
+/// [UseDomElementScreen]
+class UseDomElementScreenRoute extends PageRouteInfo<void> {
+  const UseDomElementScreenRoute()
+      : super(UseDomElementScreenRoute.name, path: '/use_dom_elements');
+
+  static const String name = 'UseDomElementScreenRoute';
 }

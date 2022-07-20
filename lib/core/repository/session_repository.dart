@@ -5,7 +5,6 @@ import 'package:flutter_web_showcase/core/model/user.dart';
 import 'package:flutter_web_showcase/core/source/auth_local_source.dart';
 import 'package:flutter_web_showcase/core/source/auth_remote_source.dart';
 
-
 class SessionRepository {
   final AuthLocalSource _authLocalSource;
   final AuthRemoteSource _authRemoteSource;
