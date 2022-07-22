@@ -25,10 +25,10 @@ class _$AppRouter extends RootStackRouter {
       return MaterialPageX<dynamic>(
           routeData: routeData, child: CameraScreen(), maintainState: false);
     },
-    RandomNumberScreenRoute.name: (routeData) {
+    MovenetExampleScreenRoute.name: (routeData) {
       return MaterialPageX<dynamic>(
           routeData: routeData,
-          child: RandomNumberScreen(),
+          child: MovenetExampleScreen(),
           maintainState: false);
     },
     UseDomElementScreenRoute.name: (routeData) {
@@ -45,7 +45,7 @@ class _$AppRouter extends RootStackRouter {
             path: '/', redirectTo: '/examples', fullMatch: true),
         RouteConfig(ExampleSelectorScreenRoute.name, path: '/examples'),
         RouteConfig(CameraScreenRoute.name, path: '/camera'),
-        RouteConfig(RandomNumberScreenRoute.name, path: '/random'),
+        RouteConfig(MovenetExampleScreenRoute.name, path: '/random'),
         RouteConfig(UseDomElementScreenRoute.name, path: '/use_dom_elements')
       ];
 }
@@ -68,12 +68,12 @@ class CameraScreenRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [RandomNumberScreen]
-class RandomNumberScreenRoute extends PageRouteInfo<void> {
-  const RandomNumberScreenRoute()
-      : super(RandomNumberScreenRoute.name, path: '/random');
+/// [MovenetExampleScreen]
+class MovenetExampleScreenRoute extends PageRouteInfo<void> {
+  const MovenetExampleScreenRoute()
+      : super(MovenetExampleScreenRoute.name, path: '/random');
 
-  static const String name = 'RandomNumberScreenRoute';
+  static const String name = 'MovenetExampleScreenRoute';
 }
 
 /// generated route for

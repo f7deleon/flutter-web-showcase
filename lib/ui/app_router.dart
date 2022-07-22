@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_showcase/ui/camera_screen/camera_screen.dart';
 import 'package:flutter_web_showcase/ui/example_selector_screen/example_selector_screen.dart';
-import 'package:flutter_web_showcase/ui/random_number_screen/random_number_screen.dart';
+import 'package:flutter_web_showcase/ui/movenet_example/movenet_example_screen.dart';
 import 'package:flutter_web_showcase/ui/use_dom_element/use_dom_element_sceen.dart';
 
 part 'app_router.gr.dart';
@@ -22,7 +22,7 @@ part 'app_router.gr.dart';
     ),
     AutoRoute(
       path: AppRouter.RANDOM_NUMBER_PATH,
-      page: RandomNumberScreen,
+      page: MovenetExampleScreen,
       maintainState: false,
     ),
     AutoRoute(

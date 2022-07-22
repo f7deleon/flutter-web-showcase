@@ -2,18 +2,23 @@ import 'dart:async';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_web_showcase/web/js_util_wrapper/js_util_manager.dart';
 import 'package:universal_html/html.dart';
+
+import '../../web/tfjs_wrapper/tfjs_wrapper_web.dart';
 
 class CameraWidget extends StatefulWidget {
   final double _width;
   final double _height;
   final Function() valueChanged;
+  final bool movenetEnable;
 
   CameraWidget({
     Key? key,
     required double width,
     required double height,
     required Function() valueChanged,
+    required this.movenetEnable,
   })  : _width = width,
         _height = height,
         valueChanged = valueChanged,
@@ -21,15 +26,15 @@ class CameraWidget extends StatefulWidget {
 
   @override
   _CameraWidgetState createState() =>
-      _CameraWidgetState(_width, _height, valueChanged);
+      _CameraWidgetState(_width, _height, valueChanged, movenetEnable);
 }
 
 class _CameraWidgetState extends State<CameraWidget> {
   final double _width;
   final double _height;
-  final VideoElement _webcamVideoElement = VideoElement()
-    ..style.width = '100%'
-    ..style.height = '100%';
+  final bool movenetEnable;
+  VideoElement _webcamVideoElement = VideoElement();
+  CanvasElement canvasElement = CanvasElement();
   late Function(Event) eventListener;
   Function() valueChanged;
 
@@ -39,9 +44,21 @@ class _CameraWidgetState extends State<CameraWidget> {
       destroyed so it will crash
     */
   final String videoElementId = 'webcam';
+  final String canvasElementId = 'canvasElem';
   MediaStream? _stream;
 
-  _CameraWidgetState(this._width, this._height, this.valueChanged) : super();
+  _CameraWidgetState(
+      this._width, this._height, this.valueChanged, this.movenetEnable)
+      : super() {
+    _webcamVideoElement = VideoElement()
+      ..style.width = '100%'
+      ..style.height = '100%';
+    canvasElement =
+        CanvasElement(width: _width.toInt(), height: _height.toInt())
+          ..style.setProperty('transform', 'scaleX(-1)')
+          ..style.width = '100%'
+          ..style.height = '100%';
+  }
 
   @override
   void dispose() {
@@ -59,9 +76,9 @@ class _CameraWidgetState extends State<CameraWidget> {
   @override
   void initState() {
     super.initState();
-
+    unawaited(initMoveNet());
     // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory('webcam', (int viewId) {
+    ui.platformViewRegistry.registerViewFactory(videoElementId, (int viewId) {
       setupCamera();
 
       eventListener = (event) {
@@ -71,6 +88,14 @@ class _CameraWidgetState extends State<CameraWidget> {
       _webcamVideoElement.addEventListener('loadeddata', eventListener);
       return _webcamVideoElement;
     });
+    // ignore: undefined_prefixed_name
+    ui.platformViewRegistry.registerViewFactory(canvasElementId, (int viewId) {
+      return canvasElement;
+    });
+  }
+
+  Future<void> initMoveNet() async {
+    await JsUtilManager.instance.promiseToFuture(init());
   }
 
   Future<void> setupCamera() async {
@@ -96,22 +121,26 @@ class _CameraWidgetState extends State<CameraWidget> {
   }
 
   void renderPrediction(num test) async {
-    //Do something
-    valueChanged.call();
+    canvasElement.context2D.clearRect(0, 0, _width, _height);
+    var pose = await JsUtilManager.instance
+        .promiseToFuture(detectPose(_webcamVideoElement));
+    drawResults(pose, canvasElement.context2D, false);
     window.requestAnimationFrame(renderPrediction);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: SizedBox(
-        height: _height,
-        width: _width,
-        child: HtmlElementView(
+    return SizedBox(
+      width: _width,
+      height: _height,
+      child: Stack(children: [
+        HtmlElementView(
           key: UniqueKey(),
-          viewType: 'webcam',
+          viewType: videoElementId,
         ),
-      ),
+        if (movenetEnable)
+          HtmlElementView(key: UniqueKey(), viewType: canvasElementId)
+      ]),
     );
   }
 }

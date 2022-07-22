@@ -1,7 +1,5 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_web_showcase/ui/app_router.dart';
 import 'package:flutter_web_showcase/ui/camera_screen/camera_cubit.dart';
 import 'package:flutter_web_showcase/ui/widgets/camera_widget.dart';
 
@@ -27,15 +25,8 @@ class _CameraScreenContent extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             valueChanged: () {},
+            movenetEnable: false,
           ),
-          Positioned(
-              bottom: 60,
-              right: 60,
-              child: ElevatedButton(
-                onPressed: () =>
-                    context.router.replace(RandomNumberScreenRoute()),
-                child: Text('Get random number'),
-              )),
           Positioned(
               bottom: 60,
               left: 60,

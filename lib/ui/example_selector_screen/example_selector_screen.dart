@@ -22,6 +22,10 @@ class ExampleSelectorScreen extends StatelessWidget {
             onPressed: () => context.router.push(CameraScreenRoute()),
             child: Text('Advance Camera example'),
           ),
+          TextButton(
+            onPressed: () => context.router.push(MovenetExampleScreenRoute()),
+            child: Text('Movenet example'),
+          ),
         ],
       ),
     );
