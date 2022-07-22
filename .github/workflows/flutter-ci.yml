@@ -35,5 +35,5 @@ jobs:
         run: fvm flutter analyze .
       - name: Run tests
         run: fvm flutter test
-      - name: Generate android APK
-        run: fvm flutter build apk --flavor staging
+      - name: Build flutter web app
+        run: fvm flutter build web

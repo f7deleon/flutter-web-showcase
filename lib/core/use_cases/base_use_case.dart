@@ -1,4 +1,3 @@
-
 import 'package:flutter_web_showcase/core/common/logger.dart';
 import 'package:flutter_web_showcase/core/common/result.dart';
 

@@ -1,4 +1,3 @@
-
 import 'package:flutter_web_showcase/core/model/user.dart';
 import 'package:flutter_web_showcase/core/repository/session_repository.dart';
 

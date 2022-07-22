@@ -1,7 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_web_showcase/ui/app_router.dart';
 import 'package:flutter_web_showcase/ui/camera_screen/camera_cubit.dart';
-import 'package:flutter_web_showcase/ui/splash/splash_bloc.dart';
 import 'package:flutter_web_showcase/ui/widgets/camera_widget.dart';
 
 class CameraScreen extends StatelessWidget {
@@ -31,11 +32,8 @@ class _CameraScreenContent extends StatelessWidget {
               bottom: 60,
               right: 60,
               child: ElevatedButton(
-                onPressed: () {
-                  context
-                      .read<SplashBloc>()
-                      .add(SplashBaseEvent.changeRouter(showCamera: true));
-                },
+                onPressed: () =>
+                    context.router.replace(RandomNumberScreenRoute()),
                 child: Text('Get random number'),
               )),
           Positioned(

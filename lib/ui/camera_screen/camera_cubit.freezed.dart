@@ -85,31 +85,31 @@ class _$CameraStateCopyWithImpl<$Res> implements $CameraStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $CameraStateBaseCopyWith<$Res>
+abstract class _$$CameraStateBaseCopyWith<$Res>
     implements $CameraStateCopyWith<$Res> {
-  factory $CameraStateBaseCopyWith(
-          CameraStateBase value, $Res Function(CameraStateBase) then) =
-      _$CameraStateBaseCopyWithImpl<$Res>;
+  factory _$$CameraStateBaseCopyWith(
+          _$CameraStateBase value, $Res Function(_$CameraStateBase) then) =
+      __$$CameraStateBaseCopyWithImpl<$Res>;
   @override
   $Res call({int number});
 }
 
 /// @nodoc
-class _$CameraStateBaseCopyWithImpl<$Res>
+class __$$CameraStateBaseCopyWithImpl<$Res>
     extends _$CameraStateCopyWithImpl<$Res>
-    implements $CameraStateBaseCopyWith<$Res> {
-  _$CameraStateBaseCopyWithImpl(
-      CameraStateBase _value, $Res Function(CameraStateBase) _then)
-      : super(_value, (v) => _then(v as CameraStateBase));
+    implements _$$CameraStateBaseCopyWith<$Res> {
+  __$$CameraStateBaseCopyWithImpl(
+      _$CameraStateBase _value, $Res Function(_$CameraStateBase) _then)
+      : super(_value, (v) => _then(v as _$CameraStateBase));
 
   @override
-  CameraStateBase get _value => super._value as CameraStateBase;
+  _$CameraStateBase get _value => super._value as _$CameraStateBase;
 
   @override
   $Res call({
     Object? number = freezed,
   }) {
-    return _then(CameraStateBase(
+    return _then(_$CameraStateBase(
       number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
@@ -135,7 +135,7 @@ class _$CameraStateBase implements CameraStateBase {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is CameraStateBase &&
+            other is _$CameraStateBase &&
             const DeepCollectionEquality().equals(other.number, number));
   }
 
@@ -145,8 +145,8 @@ class _$CameraStateBase implements CameraStateBase {
 
   @JsonKey(ignore: true)
   @override
-  $CameraStateBaseCopyWith<CameraStateBase> get copyWith =>
-      _$CameraStateBaseCopyWithImpl<CameraStateBase>(this, _$identity);
+  _$$CameraStateBaseCopyWith<_$CameraStateBase> get copyWith =>
+      __$$CameraStateBaseCopyWithImpl<_$CameraStateBase>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -209,9 +209,9 @@ abstract class CameraStateBase implements CameraState {
   const factory CameraStateBase(final int number) = _$CameraStateBase;
 
   @override
-  int get number => throw _privateConstructorUsedError;
+  int get number;
   @override
   @JsonKey(ignore: true)
-  $CameraStateBaseCopyWith<CameraStateBase> get copyWith =>
+  _$$CameraStateBaseCopyWith<_$CameraStateBase> get copyWith =>
       throw _privateConstructorUsedError;
 }

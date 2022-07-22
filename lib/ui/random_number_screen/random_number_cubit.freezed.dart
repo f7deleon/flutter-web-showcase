@@ -86,31 +86,31 @@ class _$RandomNumberStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $RandomNumberStateBaseCopyWith<$Res>
+abstract class _$$RandomNumberStateBaseCopyWith<$Res>
     implements $RandomNumberStateCopyWith<$Res> {
-  factory $RandomNumberStateBaseCopyWith(RandomNumberStateBase value,
-          $Res Function(RandomNumberStateBase) then) =
-      _$RandomNumberStateBaseCopyWithImpl<$Res>;
+  factory _$$RandomNumberStateBaseCopyWith(_$RandomNumberStateBase value,
+          $Res Function(_$RandomNumberStateBase) then) =
+      __$$RandomNumberStateBaseCopyWithImpl<$Res>;
   @override
   $Res call({int number});
 }
 
 /// @nodoc
-class _$RandomNumberStateBaseCopyWithImpl<$Res>
+class __$$RandomNumberStateBaseCopyWithImpl<$Res>
     extends _$RandomNumberStateCopyWithImpl<$Res>
-    implements $RandomNumberStateBaseCopyWith<$Res> {
-  _$RandomNumberStateBaseCopyWithImpl(
-      RandomNumberStateBase _value, $Res Function(RandomNumberStateBase) _then)
-      : super(_value, (v) => _then(v as RandomNumberStateBase));
+    implements _$$RandomNumberStateBaseCopyWith<$Res> {
+  __$$RandomNumberStateBaseCopyWithImpl(_$RandomNumberStateBase _value,
+      $Res Function(_$RandomNumberStateBase) _then)
+      : super(_value, (v) => _then(v as _$RandomNumberStateBase));
 
   @override
-  RandomNumberStateBase get _value => super._value as RandomNumberStateBase;
+  _$RandomNumberStateBase get _value => super._value as _$RandomNumberStateBase;
 
   @override
   $Res call({
     Object? number = freezed,
   }) {
-    return _then(RandomNumberStateBase(
+    return _then(_$RandomNumberStateBase(
       number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
@@ -136,7 +136,7 @@ class _$RandomNumberStateBase implements RandomNumberStateBase {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RandomNumberStateBase &&
+            other is _$RandomNumberStateBase &&
             const DeepCollectionEquality().equals(other.number, number));
   }
 
@@ -146,8 +146,8 @@ class _$RandomNumberStateBase implements RandomNumberStateBase {
 
   @JsonKey(ignore: true)
   @override
-  $RandomNumberStateBaseCopyWith<RandomNumberStateBase> get copyWith =>
-      _$RandomNumberStateBaseCopyWithImpl<RandomNumberStateBase>(
+  _$$RandomNumberStateBaseCopyWith<_$RandomNumberStateBase> get copyWith =>
+      __$$RandomNumberStateBaseCopyWithImpl<_$RandomNumberStateBase>(
           this, _$identity);
 
   @override
@@ -212,9 +212,9 @@ abstract class RandomNumberStateBase implements RandomNumberState {
       _$RandomNumberStateBase;
 
   @override
-  int get number => throw _privateConstructorUsedError;
+  int get number;
   @override
   @JsonKey(ignore: true)
-  $RandomNumberStateBaseCopyWith<RandomNumberStateBase> get copyWith =>
+  _$$RandomNumberStateBaseCopyWith<_$RandomNumberStateBase> get copyWith =>
       throw _privateConstructorUsedError;
 }
