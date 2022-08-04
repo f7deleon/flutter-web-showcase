@@ -26,6 +26,10 @@ class ExampleSelectorScreen extends StatelessWidget {
             onPressed: () => context.router.push(MovenetExampleScreenRoute()),
             child: Text('Movenet example'),
           ),
+          TextButton(
+            onPressed: () => context.router.push(ProdDevScreenRoute()),
+            child: Text('Dev/Prod exapmle'),
+          ),
         ],
       ),
     );

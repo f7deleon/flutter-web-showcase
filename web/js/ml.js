@@ -31,7 +31,9 @@ function drawResults(keypoints, ctx, isBlack) {
 }
 
 function drawResult(input, ctx, isBlack) {
-  drawSkeleton(input[0].keypoints, ctx, isBlack ? 'Black' : lineColor);
+    for(k in input){
+        drawSkeleton(getKeypoints(input), ctx, isBlack ? 'Black' : lineColor);
+    }
 }
 
 function drawSkeleton(keypoints, ctx, color) {

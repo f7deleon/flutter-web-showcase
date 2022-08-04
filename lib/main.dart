@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_web_showcase/core/common/config.dart';
 import 'package:flutter_web_showcase/core/common/logger.dart';
 import 'package:flutter_web_showcase/ui/splash/splash_screen.dart';
@@ -24,7 +25,10 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return SplashScreen();
-  }
+  Widget build(BuildContext context) => ScreenUtilInit(
+    designSize: Size(1600, 900),
+    minTextAdapt: false,
+    splitScreenMode: true,
+    builder: (_a, _b) => SplashScreen(),
+  );
 }

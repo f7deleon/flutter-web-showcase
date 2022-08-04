@@ -12,6 +12,7 @@ class CameraWidget extends StatefulWidget {
   final double _height;
   final Function() valueChanged;
   final bool movenetEnable;
+  final bool variableId;
 
   CameraWidget({
     Key? key,
@@ -19,19 +20,21 @@ class CameraWidget extends StatefulWidget {
     required double height,
     required Function() valueChanged,
     required this.movenetEnable,
+    this.variableId = true,
   })  : _width = width,
         _height = height,
         valueChanged = valueChanged,
         super(key: key);
 
   @override
-  _CameraWidgetState createState() =>
-      _CameraWidgetState(_width, _height, valueChanged, movenetEnable);
+  _CameraWidgetState createState() => _CameraWidgetState(
+      _width, _height, valueChanged, movenetEnable, variableId);
 }
 
 class _CameraWidgetState extends State<CameraWidget> {
   final double _width;
   final double _height;
+  final bool variableId;
   final bool movenetEnable;
   VideoElement _webcamVideoElement = VideoElement();
   CanvasElement canvasElement = CanvasElement();
@@ -43,13 +46,21 @@ class _CameraWidgetState extends State<CameraWidget> {
      each instance it will always take the first widget instance that is
       destroyed so it will crash
     */
-  final String videoElementId = 'webcam';
-  final String canvasElementId = 'canvasElem';
+  final String videoElementId;
+
+  final String canvasElementId;
+
   MediaStream? _stream;
 
-  _CameraWidgetState(
-      this._width, this._height, this.valueChanged, this.movenetEnable)
-      : super() {
+  _CameraWidgetState(this._width, this._height, this.valueChanged,
+      this.movenetEnable, this.variableId)
+      : videoElementId = variableId
+            ? 'webcam_${DateTime.now().millisecondsSinceEpoch}'
+            : 'webcam',
+        canvasElementId = variableId
+            ? 'canvasElem_${DateTime.now().millisecondsSinceEpoch}'
+            : 'canvasElem',
+        super() {
     _webcamVideoElement = VideoElement()
       ..style.width = '100%'
       ..style.height = '100%';
@@ -82,7 +93,9 @@ class _CameraWidgetState extends State<CameraWidget> {
       setupCamera();
 
       eventListener = (event) {
-        renderPrediction(0);
+        if (movenetEnable) {
+          renderPrediction(0);
+        }
         _webcamVideoElement.removeEventListener('loadeddata', eventListener);
       };
       _webcamVideoElement.addEventListener('loadeddata', eventListener);
