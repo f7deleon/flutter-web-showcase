@@ -27,7 +27,7 @@ class _QuestionsScreenContent extends StatelessWidget {
           content: [
             Center(
               child: Text(
-                'Questions?',
+                'Preguntas?',
                 style: TextStyle(
                     color: Color.fromARGB(255, 35, 51, 84),
                     fontSize: 80.sp,

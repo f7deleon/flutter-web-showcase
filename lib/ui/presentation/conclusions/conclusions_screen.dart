@@ -20,7 +20,7 @@ class ConclusionsScreen extends StatelessWidget {
 class _ConclusionsScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Conclusions',
+          title: 'Conclusiones',
           onNext: () {
             context.router.navigate(QuestionsScreenRoute());
           },
@@ -32,6 +32,7 @@ class _ConclusionsScreenContent extends StatelessWidget {
                 children: [
                   BulletList(bulletList: [
                     'Flutter nos permitió implementar una web compleja',
+                    'Dado su importancia es necesario implementar alguna solucion al problema del SEO',
                     'Tenemos que escribir código orientado por plataforma',
                     'Problemas que son característicos de web impactan a flutter',
                     'El fuerte de la solución termina siendo la reusabilidad del código en otras plataformas',
@@ -39,5 +40,20 @@ class _ConclusionsScreenContent extends StatelessWidget {
                 ],
               ),
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    alignment: Alignment.centerRight,
+                    image: AssetImage('assets/agenda_banner.png'),
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                ),
+              ),
+            )
           ]);
 }

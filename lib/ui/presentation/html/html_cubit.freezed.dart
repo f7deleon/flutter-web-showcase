@@ -17,19 +17,20 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$HtmlState {
   int get counter => throw _privateConstructorUsedError;
+  bool get showCode => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int counter) state,
+    required TResult Function(int counter, bool showCode) state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int counter)? state,
+    TResult Function(int counter, bool showCode)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int counter)? state,
+    TResult Function(int counter, bool showCode)? state,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -59,7 +60,7 @@ mixin _$HtmlState {
 abstract class $HtmlStateCopyWith<$Res> {
   factory $HtmlStateCopyWith(HtmlState value, $Res Function(HtmlState) then) =
       _$HtmlStateCopyWithImpl<$Res>;
-  $Res call({int counter});
+  $Res call({int counter, bool showCode});
 }
 
 /// @nodoc
@@ -73,12 +74,17 @@ class _$HtmlStateCopyWithImpl<$Res> implements $HtmlStateCopyWith<$Res> {
   @override
   $Res call({
     Object? counter = freezed,
+    Object? showCode = freezed,
   }) {
     return _then(_value.copyWith(
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      showCode: showCode == freezed
+          ? _value.showCode
+          : showCode // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -90,7 +96,7 @@ abstract class _$$HtmlStateBaseCopyWith<$Res>
           _$HtmlStateBase value, $Res Function(_$HtmlStateBase) then) =
       __$$HtmlStateBaseCopyWithImpl<$Res>;
   @override
-  $Res call({int counter});
+  $Res call({int counter, bool showCode});
 }
 
 /// @nodoc
@@ -106,12 +112,17 @@ class __$$HtmlStateBaseCopyWithImpl<$Res> extends _$HtmlStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? counter = freezed,
+    Object? showCode = freezed,
   }) {
     return _then(_$HtmlStateBase(
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
+      showCode: showCode == freezed
+          ? _value.showCode
+          : showCode // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -119,15 +130,18 @@ class __$$HtmlStateBaseCopyWithImpl<$Res> extends _$HtmlStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$HtmlStateBase implements HtmlStateBase {
-  const _$HtmlStateBase({this.counter = 0});
+  const _$HtmlStateBase({this.counter = 0, this.showCode = false});
 
   @override
   @JsonKey()
   final int counter;
+  @override
+  @JsonKey()
+  final bool showCode;
 
   @override
   String toString() {
-    return 'HtmlState.state(counter: $counter)';
+    return 'HtmlState.state(counter: $counter, showCode: $showCode)';
   }
 
   @override
@@ -135,12 +149,15 @@ class _$HtmlStateBase implements HtmlStateBase {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HtmlStateBase &&
-            const DeepCollectionEquality().equals(other.counter, counter));
+            const DeepCollectionEquality().equals(other.counter, counter) &&
+            const DeepCollectionEquality().equals(other.showCode, showCode));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(counter));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(counter),
+      const DeepCollectionEquality().hash(showCode));
 
   @JsonKey(ignore: true)
   @override
@@ -150,27 +167,27 @@ class _$HtmlStateBase implements HtmlStateBase {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int counter) state,
+    required TResult Function(int counter, bool showCode) state,
   }) {
-    return state(counter);
+    return state(counter, showCode);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int counter)? state,
+    TResult Function(int counter, bool showCode)? state,
   }) {
-    return state?.call(counter);
+    return state?.call(counter, showCode);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int counter)? state,
+    TResult Function(int counter, bool showCode)? state,
     required TResult orElse(),
   }) {
     if (state != null) {
-      return state(counter);
+      return state(counter, showCode);
     }
     return orElse();
   }
@@ -205,10 +222,13 @@ class _$HtmlStateBase implements HtmlStateBase {
 }
 
 abstract class HtmlStateBase implements HtmlState {
-  const factory HtmlStateBase({final int counter}) = _$HtmlStateBase;
+  const factory HtmlStateBase({final int counter, final bool showCode}) =
+      _$HtmlStateBase;
 
   @override
   int get counter;
+  @override
+  bool get showCode;
   @override
   @JsonKey(ignore: true)
   _$$HtmlStateBaseCopyWith<_$HtmlStateBase> get copyWith =>

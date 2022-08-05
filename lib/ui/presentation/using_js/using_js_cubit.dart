@@ -8,5 +8,9 @@ part 'using_js_cubit.freezed.dart';
 
 class UsingJsCubit extends Cubit<UsingJsState> {
   UsingJsCubit() : super(UsingJsState.state());
+
+  showCode() {
+    emit(state.copyWith(showCode: true));
+  }
 }
 

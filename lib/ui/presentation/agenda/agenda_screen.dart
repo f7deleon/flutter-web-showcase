@@ -35,6 +35,21 @@ class _AgendaScreenContent extends StatelessWidget {
                     'Using js code in Dart',
                     'Browser support',
                   ],
-                ))
+                )),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    alignment: Alignment.centerRight,
+                    image: AssetImage('assets/agenda_banner.png'),
+                  ),
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                ),
+              ),
+            )
           ]);
 }

@@ -21,7 +21,7 @@ class _ThanksScreenContent extends StatelessWidget {
       PPTBackground(title: '', onNext: null, content: [
         Center(
           child: Text(
-            'Thanks!',
+            'Gracias!',
             style: TextStyle(
               color: Color.fromARGB(255, 35, 51, 84),
               fontSize: 80.sp,

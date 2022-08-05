@@ -16,19 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$UsingJsState {
+  bool get showCode => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() state,
+    required TResult Function(bool showCode) state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? state,
+    TResult Function(bool showCode)? state,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? state,
+    TResult Function(bool showCode)? state,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +49,10 @@ mixin _$UsingJsState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UsingJsStateCopyWith<UsingJsState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +60,7 @@ abstract class $UsingJsStateCopyWith<$Res> {
   factory $UsingJsStateCopyWith(
           UsingJsState value, $Res Function(UsingJsState) then) =
       _$UsingJsStateCopyWithImpl<$Res>;
+  $Res call({bool showCode});
 }
 
 /// @nodoc
@@ -64,13 +70,28 @@ class _$UsingJsStateCopyWithImpl<$Res> implements $UsingJsStateCopyWith<$Res> {
   final UsingJsState _value;
   // ignore: unused_field
   final $Res Function(UsingJsState) _then;
+
+  @override
+  $Res call({
+    Object? showCode = freezed,
+  }) {
+    return _then(_value.copyWith(
+      showCode: showCode == freezed
+          ? _value.showCode
+          : showCode // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class _$$UsingJsStateBaseCopyWith<$Res> {
+abstract class _$$UsingJsStateBaseCopyWith<$Res>
+    implements $UsingJsStateCopyWith<$Res> {
   factory _$$UsingJsStateBaseCopyWith(
           _$UsingJsStateBase value, $Res Function(_$UsingJsStateBase) then) =
       __$$UsingJsStateBaseCopyWithImpl<$Res>;
+  @override
+  $Res call({bool showCode});
 }
 
 /// @nodoc
@@ -83,51 +104,75 @@ class __$$UsingJsStateBaseCopyWithImpl<$Res>
 
   @override
   _$UsingJsStateBase get _value => super._value as _$UsingJsStateBase;
+
+  @override
+  $Res call({
+    Object? showCode = freezed,
+  }) {
+    return _then(_$UsingJsStateBase(
+      showCode: showCode == freezed
+          ? _value.showCode
+          : showCode // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$UsingJsStateBase implements UsingJsStateBase {
-  const _$UsingJsStateBase();
+  const _$UsingJsStateBase({this.showCode = false});
+
+  @override
+  @JsonKey()
+  final bool showCode;
 
   @override
   String toString() {
-    return 'UsingJsState.state()';
+    return 'UsingJsState.state(showCode: $showCode)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UsingJsStateBase);
+        (other.runtimeType == runtimeType &&
+            other is _$UsingJsStateBase &&
+            const DeepCollectionEquality().equals(other.showCode, showCode));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(showCode));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UsingJsStateBaseCopyWith<_$UsingJsStateBase> get copyWith =>
+      __$$UsingJsStateBaseCopyWithImpl<_$UsingJsStateBase>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() state,
+    required TResult Function(bool showCode) state,
   }) {
-    return state();
+    return state(showCode);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? state,
+    TResult Function(bool showCode)? state,
   }) {
-    return state?.call();
+    return state?.call(showCode);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? state,
+    TResult Function(bool showCode)? state,
     required TResult orElse(),
   }) {
     if (state != null) {
-      return state();
+      return state(showCode);
     }
     return orElse();
   }
@@ -162,5 +207,12 @@ class _$UsingJsStateBase implements UsingJsStateBase {
 }
 
 abstract class UsingJsStateBase implements UsingJsState {
-  const factory UsingJsStateBase() = _$UsingJsStateBase;
+  const factory UsingJsStateBase({final bool showCode}) = _$UsingJsStateBase;
+
+  @override
+  bool get showCode;
+  @override
+  @JsonKey(ignore: true)
+  _$$UsingJsStateBaseCopyWith<_$UsingJsStateBase> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -30,11 +30,26 @@ class _HtmlScreenContent extends StatelessWidget {
               top: 150.h,
               child: Column(
                 children: [
-                  BulletList(bulletList: [
-                    'Flutter permite agregar elementos html al DOM',
-                    'Estos elementos no comparten los cambios de estado de flutter',
-                    'Tampoco el ciclo de vida de los elementos',
-                  ]),
+                  BlocSelector<HtmlCubit, HtmlState, bool>(
+                    selector: (state) => state.showCode,
+                    builder: (context, state) {
+                      if (state) {
+                        return Image.asset(
+                          'assets/code_exapmle_html.png',
+                          scale: 1.7,
+                        );
+                      } else {
+                        return BulletList(bulletList: [
+                          'Flutter permite agregar elementos html al DOM',
+                          'Estos elementos no comparten los cambios de estado de flutter',
+                          'Tampoco el ciclo de vida de los elementos',
+                        ]);
+                      }
+                    },
+                  ),
+                  TextButton(
+                      onPressed: () => context.read<HtmlCubit>().showCode(),
+                      child: Text('Show code'))
                 ],
               ),
             ),
@@ -55,8 +70,8 @@ class _HtmlScreenContent extends StatelessWidget {
                         ),
                         TextButton(
                             child: Text('Change state'),
-                            onPressed: () => context.read<HtmlCubit>().changeState()
-                        )
+                            onPressed: () =>
+                                context.read<HtmlCubit>().changeState())
                       ],
                     )),
               ),

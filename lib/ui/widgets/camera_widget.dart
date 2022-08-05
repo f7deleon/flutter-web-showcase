@@ -89,7 +89,8 @@ class _CameraWidgetState extends State<CameraWidget> {
     super.initState();
     unawaited(initMoveNet());
     // ignore: undefined_prefixed_name
-    ui.platformViewRegistry.registerViewFactory(videoElementId, (int viewId) {
+    ui.platformViewRegistry.registerViewFactory(
+        variableId ? videoElementId : 'webcam', (int viewId) {
       setupCamera();
 
       eventListener = (event) {
@@ -152,7 +153,9 @@ class _CameraWidgetState extends State<CameraWidget> {
           viewType: videoElementId,
         ),
         if (movenetEnable)
-          HtmlElementView(key: UniqueKey(), viewType: canvasElementId)
+          HtmlElementView(
+              key: UniqueKey(),
+              viewType: variableId ? canvasElementId : 'webcam')
       ]),
     );
   }

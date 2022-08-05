@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,11 +30,25 @@ class _UsingJsScreenContent extends StatelessWidget {
               top: 150.h,
               child: Column(
                 children: [
-                  BulletList(bulletList: [
-                    'Wrappear promise a futures',
-                    'Solo podemos usar callbacks con allowInterop',
-                    'Solo podemos definir una única firma de la función',
-                  ]),
+                  BlocSelector<UsingJsCubit, UsingJsState, bool>(
+                      selector: (state) => state.showCode,
+                      builder: (context, state) {
+                        if (state) {
+                          return Image.asset(
+                            'assets/code_example_js.png',
+                            scale: 2.0,
+                          );
+                        } else {
+                          return BulletList(bulletList: [
+                            'Wrappear promise a futures',
+                            'Solo podemos usar callbacks con allowInterop',
+                            'Solo podemos definir una única firma de la función',
+                          ]);
+                        }
+                      }),
+                  TextButton(
+                      onPressed: () => context.read<UsingJsCubit>().showCode(),
+                      child: Text('Show code'))
                 ],
               ),
             ),
