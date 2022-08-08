@@ -28,12 +28,12 @@ class _AgendaScreenContent extends StatelessWidget {
                 top: 150.h,
                 child: BulletList(
                   bulletList: [
-                    'Where is the DOM?',
-                    'Works in debug, but does it in prod?',
-                    'Accessing hardware from Flutter',
-                    'Using Html components with Flutter',
-                    'Using js code in Dart',
-                    'Browser support',
+                    'Donde esta el DOM?',
+                    'Funciona en debug pero en prod?',
+                    'Accediendo a Hardware desde flutter',
+                    'Componentes HTML con Flutter',
+                    'Usar codigo js con Dart',
+                    'Soporte de Navegadores',
                   ],
                 )),
             Align(

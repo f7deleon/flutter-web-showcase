@@ -22,26 +22,29 @@ class AccessingHardwareScreen extends StatelessWidget {
 class _AccessingHardwareScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Accessing hardware',
+          title: 'Accediendo a Hardware desde flutter',
           onNext: () => context.router.navigate(HtmlScreenRoute()),
           content: [
-            Positioned(
-              left: 50.w,
-              top: 150.h,
-              child: Column(
-                children: [
-                  BulletList(bulletList: [
-                    'Flutter nos permite utilizar elementos de Hardware',
-                    'La gran mayoria de packages para usar harware solo soportan mobile',
-                    'Hace que el código sea específico para la plataforma',
-                  ]),
-                  TextButton(
-                    onPressed: () => context
-                        .read<AccessingHardwareCubit>()
-                        .askForPermissions(),
-                    child: Text('Ask for camera'),
-                  ),
-                ],
+            Padding(
+              padding: EdgeInsets.only(left: 50.w),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BulletList(bulletList: [
+                      'Flutter nos permite utilizar elementos de Hardware',
+                      'La gran mayoria de packages para usar harware solo soportan mobile',
+                      'Hace que el código sea específico para la plataforma',
+                    ]),
+                    TextButton(
+                      onPressed: () => context
+                          .read<AccessingHardwareCubit>()
+                          .askForPermissions(),
+                      child: Text('Ask for camera'),
+                    ),
+                  ],
+                ),
               ),
             ),
             Align(
@@ -54,8 +57,8 @@ class _AccessingHardwareScreenContent extends StatelessWidget {
                   builder: (context, state) {
                     if (state) {
                       return CameraWidget(
-                        width: 650,
-                        height:  488,
+                        width: 0.4.sw,
+                        height: 0.4.sw * 3 / 4,
                         valueChanged: () {},
                         movenetEnable: false,
                       );

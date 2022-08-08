@@ -20,7 +20,7 @@ class BrowserSupportScreen extends StatelessWidget {
 class _BrowserSupportScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Browser support',
+          title: 'Soporte de Navegadores',
           onNext: () => context.router.navigate(ConclusionsScreenRoute()),
           content: [
             Positioned(
@@ -32,6 +32,8 @@ class _BrowserSupportScreenContent extends StatelessWidget {
                     'Funciones implementadas de forma distinta entre navegadores',
                     'Debug mode solo habilitado para chrome/edge',
                     'Código orientado a el navegador',
+                    'Problemas con fuentes e imagenes',
+                    'Terminamos usando todas las imagenes en SVG'
                   ]),
                 ],
               ),

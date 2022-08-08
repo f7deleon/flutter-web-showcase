@@ -22,35 +22,38 @@ class HtmlScreen extends StatelessWidget {
 class _HtmlScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Using Html components with Flutter',
+          title: 'Componentes HTML con Flutter',
           onNext: () => context.router.navigate(UsingJsScreenRoute()),
           content: [
-            Positioned(
-              left: 50.w,
-              top: 150.h,
-              child: Column(
-                children: [
-                  BlocSelector<HtmlCubit, HtmlState, bool>(
-                    selector: (state) => state.showCode,
-                    builder: (context, state) {
-                      if (state) {
-                        return Image.asset(
-                          'assets/code_exapmle_html.png',
-                          scale: 1.7,
-                        );
-                      } else {
-                        return BulletList(bulletList: [
-                          'Flutter permite agregar elementos html al DOM',
-                          'Estos elementos no comparten los cambios de estado de flutter',
-                          'Tampoco el ciclo de vida de los elementos',
-                        ]);
-                      }
-                    },
-                  ),
-                  TextButton(
-                      onPressed: () => context.read<HtmlCubit>().showCode(),
-                      child: Text('Show code'))
-                ],
+            Padding(
+              padding: EdgeInsets.only(left: 50.w),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BlocSelector<HtmlCubit, HtmlState, bool>(
+                      selector: (state) => state.showCode,
+                      builder: (context, state) {
+                        if (state) {
+                          return Image.asset(
+                            'assets/code_exapmle_html.png',
+                            width: 0.5.sw,
+                          );
+                        } else {
+                          return BulletList(bulletList: [
+                            'Flutter permite agregar elementos html al DOM',
+                            'Estos elementos no comparten los cambios de estado de flutter',
+                            'Tampoco el ciclo de vida de los elementos',
+                          ]);
+                        }
+                      },
+                    ),
+                    TextButton(
+                        onPressed: () => context.read<HtmlCubit>().showCode(),
+                        child: Text('Show code'))
+                  ],
+                ),
               ),
             ),
             Align(
@@ -62,8 +65,8 @@ class _HtmlScreenContent extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         CameraWidget(
-                          width: 650,
-                          height: 488,
+                          width: 0.4.sw,
+                          height: 0.4.sw * 3 / 4,
                           valueChanged: () {},
                           movenetEnable: false,
                           variableId: false,

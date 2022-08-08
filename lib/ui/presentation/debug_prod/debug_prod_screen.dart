@@ -21,7 +21,7 @@ class DebugProdScreen extends StatelessWidget {
 class _DebugProdScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Works in debug but does it on prod?',
+          title: 'Funciona en debug pero en prod?',
           onNext: () => context.router.navigate(AccessingHardwareScreenRoute()),
           content: [
             Positioned(
@@ -34,7 +34,10 @@ class _DebugProdScreenContent extends StatelessWidget {
                     children: [
                       BulletList(bulletList: [
                         'Compiladores distintos para debug y release',
+                        'Probar en release no tiene Hot Reload y aumenta el tiempo de compilacion',
+                        'Probar en release muestra todas las excepciones minificadas',
                         'Algunas cosas funcionan de una forma en uno y no en el otro',
+                        'Crashlitics no tiene soporte para Flutter y el de Sentry es limitado',
                       ]),
                       TextButton(
                         onPressed: () =>
@@ -47,8 +50,7 @@ class _DebugProdScreenContent extends StatelessWidget {
                     children: [
                       Image.asset(
                         'assets/dev_prod_example.png',
-                        fit: BoxFit.fitWidth,
-                        scale: 1.4,
+                        width: 0.50.sw,
                       ),
                       BlocSelector<DebugProdCubit, DebugProdState, bool>(
                           selector: (state) => state.breakIt,

@@ -23,10 +23,9 @@ class _ThanksScreenContent extends StatelessWidget {
           child: Text(
             'Gracias!',
             style: TextStyle(
-              color: Color.fromARGB(255, 35, 51, 84),
-              fontSize: 80.sp,
-              fontWeight: FontWeight.bold
-            ),
+                color: Color.fromARGB(255, 35, 51, 84),
+                fontSize: 80.sp,
+                fontWeight: FontWeight.bold),
           ),
         )
       ]);

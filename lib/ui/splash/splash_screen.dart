@@ -49,6 +49,6 @@ class _SplashContentScreen extends StatelessWidget {
       });
 
   List<PageRouteInfo<dynamic>> provideRoutes(SplashBaseState state) {
-    return [ExampleSelectorScreenRoute()];
+    return [PresentationRouter()];
   }
 }

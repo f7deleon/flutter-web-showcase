@@ -21,7 +21,7 @@ class ContextScreen extends StatelessWidget {
 class _ContextScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Context',
+          title: 'Contexto',
           onNext: () => context.router.navigate(AgendaScreenRoute()),
           content: [
             Positioned(
@@ -35,10 +35,11 @@ class _ContextScreenContent extends StatelessWidget {
                           bulletList: [
                             'MoveNet, comandos de voz',
                             'Rápido desarrollo',
-                            'Abarcar muchas plataformas (Tablets y PC)',
-                            'Compatible con safari',
+                            'Abarcar muchos dispositivos (Tablets y PC)',
+                            'Compatible con safari y en Ipad',
                             'Fácil de ingresar',
-                            'A futuro tenia que poder ser una App Mobile'
+                            'Web First',
+                            'A futuro tenia que poder ser una App Mobile',
                           ],
                         ),
                       ],
@@ -51,7 +52,7 @@ class _ContextScreenContent extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/logo_flutter.png',
-                          scale: 1.7,
+                          width: 0.25.sw,
                         ),
                       ],
                     )

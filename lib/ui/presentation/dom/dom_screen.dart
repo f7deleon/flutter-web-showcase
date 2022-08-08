@@ -21,7 +21,7 @@ class DomScreen extends StatelessWidget {
 class _DomScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Where is the DOM?',
+          title: 'Donde esta el DOM?',
           onNext: () => context.router.navigate(DebugProdScreenRoute()),
           content: [
             Positioned(
@@ -33,10 +33,12 @@ class _DomScreenContent extends StatelessWidget {
                       selector: (state) => state.selectable,
                       builder: (context, state) => BulletList(
                         bulletList: [
-                          'No se puede inspeccionar los elementos',
+                          'Todo se dibuja en un canvas siguiendo el flutter widget tree'
+                              'No se puede inspeccionar los elementos',
                           'Es malo para el SEO',
-                          'Seleccionar texto no funciona del todo bien',
+                          'Algunas funcionalidades simples como seleccionar texto no funciona del todo bien',
                           'Problemas con accesibilidad',
+                          'Utilizar DevTools para inspeccionar',
                         ],
                         selectable: state,
                       ),
@@ -52,7 +54,10 @@ class _DomScreenContent extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: Padding(
                 padding: EdgeInsets.only(right: 120.w),
-                child: Image.asset('sample_flutter_layout.png'),
+                child: Image.asset(
+                  'sample_flutter_layout.png',
+                  width: 0.35.sw,
+                ),
               ),
             ),
           ]);

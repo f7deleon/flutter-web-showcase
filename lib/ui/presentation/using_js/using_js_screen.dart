@@ -22,34 +22,45 @@ class UsingJsScreen extends StatelessWidget {
 class _UsingJsScreenContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) => PPTBackground(
-          title: 'Using js code in Dart',
+          title: 'Usar codigo js con Dart',
           onNext: () => context.router.navigate(BrowserSupportScreenRoute()),
           content: [
-            Positioned(
-              left: 50.w,
-              top: 150.h,
-              child: Column(
-                children: [
-                  BlocSelector<UsingJsCubit, UsingJsState, bool>(
-                      selector: (state) => state.showCode,
-                      builder: (context, state) {
-                        if (state) {
-                          return Image.asset(
-                            'assets/code_example_js.png',
-                            scale: 2.0,
-                          );
-                        } else {
-                          return BulletList(bulletList: [
-                            'Wrappear promise a futures',
-                            'Solo podemos usar callbacks con allowInterop',
-                            'Solo podemos definir una única firma de la función',
-                          ]);
-                        }
-                      }),
-                  TextButton(
-                      onPressed: () => context.read<UsingJsCubit>().showCode(),
-                      child: Text('Show code'))
-                ],
+            Padding(
+              padding: EdgeInsets.only(left: 50.w),
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    BlocSelector<UsingJsCubit, UsingJsState, bool>(
+                        selector: (state) => state.showCode,
+                        builder: (context, state) {
+                          if (state) {
+                            return Container(
+                              width: 0.5.sw,
+                              height: 0.5.sh,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: AssetImage(
+                                  'assets/code_example_js.png',
+                                )),
+                              ),
+                            );
+                          } else {
+                            return BulletList(bulletList: [
+                              'Es facil agregar codigo js'
+                              'Wrappear promise a futures',
+                              'Solo podemos usar callbacks con allowInterop',
+                              'Solo podemos definir una única firma de la función',
+                            ]);
+                          }
+                        }),
+                    TextButton(
+                        onPressed: () =>
+                            context.read<UsingJsCubit>().showCode(),
+                        child: Text('Show code'))
+                  ],
+                ),
               ),
             ),
             Align(
@@ -57,8 +68,8 @@ class _UsingJsScreenContent extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(right: 50.w),
                 child: CameraWidget(
-                  width: 650,
-                  height: 488,
+                  width: 0.4.sw,
+                  height: 0.4.sw * 3 / 4,
                   valueChanged: () {},
                   movenetEnable: true,
                   variableId: true,

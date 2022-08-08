@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -9,4 +8,3 @@ part 'agenda_cubit.freezed.dart';
 class AgendaCubit extends Cubit<AgendaState> {
   AgendaCubit() : super(AgendaState.state());
 }
-

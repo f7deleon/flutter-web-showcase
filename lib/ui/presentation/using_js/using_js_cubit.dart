@@ -1,4 +1,3 @@
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -13,4 +12,3 @@ class UsingJsCubit extends Cubit<UsingJsState> {
     emit(state.copyWith(showCode: true));
   }
 }
-

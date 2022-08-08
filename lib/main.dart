@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => ScreenUtilInit(
-    designSize: Size(1600, 900),
-    minTextAdapt: false,
-    splitScreenMode: true,
-    builder: (_a, _b) => SplashScreen(),
-  );
+        designSize: Size(1280, 800),
+        minTextAdapt: false,
+        splitScreenMode: true,
+        builder: (_a, _b) => SplashScreen(),
+      );
 }

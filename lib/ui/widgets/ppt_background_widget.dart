@@ -110,12 +110,12 @@ class BulletList extends StatelessWidget {
                                 ? SelectableText(
                                     e,
                                     key: UniqueKey(),
-                                    style: TextStyle(fontSize: 25.sp),
+                                    style: TextStyle(fontSize: 20.sp),
                                   )
                                 : Text(
                                     e,
                                     key: UniqueKey(),
-                                    style: TextStyle(fontSize: 25.sp),
+                                    style: TextStyle(fontSize: 20.sp),
                                   ),
                           ),
                         ],
