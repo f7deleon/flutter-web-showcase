@@ -41,7 +41,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  auto_route_generator: 4.2.0
+  auto_route_generator: ^4.2.1
   build_runner: 2.2.0
   flutter_lints: 1.0.4
   freezed: 2.1.0+1
