@@ -43,10 +43,17 @@ class _DomScreenContent extends StatelessWidget {
                         selectable: state,
                       ),
                     ),
-                    TextButton(
-                      onPressed: () =>
-                          context.read<DomCubit>().makeItSelectable(),
-                      child: Text('Make it selectable'),
+                    Semantics(
+                      label: 'This is a button',
+                      value: 'This is a button',
+                      hint: 'This is a button',
+                      enabled: true,
+                      container: true,
+                      child: TextButton(
+                        onPressed: () =>
+                            context.read<DomCubit>().makeItSelectable(),
+                        child: Text('Make it selectable'),
+                      ),
                     ),
                   ],
                 )),

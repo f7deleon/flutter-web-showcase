@@ -1,11 +1,11 @@
 {
-    "name": "flutter_web_showcase",
-    "short_name": "flutter_web_showcase",
+    "name": "Challenges of building a web with flutter",
+    "short_name": "Flutter web challenges",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Presentation of Challenges of building a web with flutter",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

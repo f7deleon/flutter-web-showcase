@@ -8,11 +8,11 @@ part 'html_state.dart';
 class HtmlCubit extends Cubit<HtmlState> {
   HtmlCubit() : super(HtmlState.state());
 
-  changeState() {
+  void changeState() {
     emit(state.copyWith(counter: state.counter + 1));
   }
 
-  showCode() {
-    emit(state.copyWith(showCode: true));
+  void showCode() {
+    emit(state.copyWith(showCode: !state.showCode));
   }
 }

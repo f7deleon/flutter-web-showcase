@@ -36,19 +36,14 @@ class _UsingJsScreenContent extends StatelessWidget {
                         selector: (state) => state.showCode,
                         builder: (context, state) {
                           if (state) {
-                            return Container(
-                              width: 0.5.sw,
-                              height: 0.5.sh,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                  'assets/code_example_js.png',
-                                )),
-                              ),
+                            return Image.asset(
+                              'assets/code_example_js.png',
+                              width: 0.47.sw,
+                              fit: BoxFit.fitWidth,
                             );
                           } else {
                             return BulletList(bulletList: [
-                              'Es facil agregar codigo js'
+                              'Es facil agregar codigo js',
                               'Wrappear promise a futures',
                               'Solo podemos usar callbacks con allowInterop',
                               'Solo podemos definir una única firma de la función',
@@ -56,9 +51,17 @@ class _UsingJsScreenContent extends StatelessWidget {
                           }
                         }),
                     TextButton(
-                        onPressed: () =>
-                            context.read<UsingJsCubit>().showCode(),
-                        child: Text('Show code'))
+                      onPressed: () => context.read<UsingJsCubit>().showCode(),
+                      child: BlocSelector<UsingJsCubit, UsingJsState, bool>(
+                          selector: (state) => state.showCode,
+                          builder: (context, state) {
+                            if (!state) {
+                              return Text('Show code');
+                            } else {
+                              return Text('Hide code');
+                            }
+                          }),
+                    )
                   ],
                 ),
               ),

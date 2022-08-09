@@ -38,7 +38,8 @@ class _HtmlScreenContent extends StatelessWidget {
                         if (state) {
                           return Image.asset(
                             'assets/code_exapmle_html.png',
-                            width: 0.5.sw,
+                            width: 0.47.sw,
+                            fit: BoxFit.fitWidth,
                           );
                         } else {
                           return BulletList(bulletList: [
@@ -50,8 +51,17 @@ class _HtmlScreenContent extends StatelessWidget {
                       },
                     ),
                     TextButton(
-                        onPressed: () => context.read<HtmlCubit>().showCode(),
-                        child: Text('Show code'))
+                      onPressed: () => context.read<HtmlCubit>().showCode(),
+                      child: BlocSelector<HtmlCubit, HtmlState, bool>(
+                          selector: (state) => state.showCode,
+                          builder: (context, state) {
+                            if (!state) {
+                              return Text('Show code');
+                            } else {
+                              return Text('Hide code');
+                            }
+                          }),
+                    )
                   ],
                 ),
               ),

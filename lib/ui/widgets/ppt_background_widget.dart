@@ -112,11 +112,13 @@ class BulletList extends StatelessWidget {
                                     key: UniqueKey(),
                                     style: TextStyle(fontSize: 20.sp),
                                   )
-                                : Text(
-                                    e,
-                                    key: UniqueKey(),
-                                    style: TextStyle(fontSize: 20.sp),
-                                  ),
+                                : Semantics(
+                              child: Text(
+                                      e,
+                                      key: UniqueKey(),
+                                      style: TextStyle(fontSize: 20.sp),
+                                    ),
+                                ),
                           ),
                         ],
                       ),
